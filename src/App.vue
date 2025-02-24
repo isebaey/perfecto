@@ -1,6 +1,7 @@
 <script setup>
-import LeftSidebar from './components/layout/LeftSidebar.vue'
-import TheNavbar from './components/layout/TheNavbar.vue'
+import { RouterView } from "vue-router";
+import LeftSidebar from "./components/layout/LeftSidebar.vue";
+import TheNavbar from "./components/layout/TheNavbar.vue";
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import TheNavbar from './components/layout/TheNavbar.vue'
       <main
         class="flex-grow p-6 bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark"
       >
-        <h2 class="text-2xl font-bold">Welcome to your To-Do App</h2>
+        <RouterView />
       </main>
     </div>
   </div>
