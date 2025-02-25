@@ -14,7 +14,7 @@ const route = useRoute();
     <div class="flex flex-1 justify-center space-x-4">
       <RouterLink
         to="/list"
-        class="hover:text-primary"
+        class="hover:text-primary dark:hover:text-primary"
         :class="{
           'text-primary font-bold  ': route.path === '/list',
           'text-textLight dark:text-textDark': route.path !== '/list',
@@ -31,7 +31,7 @@ const route = useRoute();
       <div class="divider border"></div>
       <RouterLink
         to="/columns"
-        class="hover:text-primary"
+        class="hover:text-primary dark:hover:text-primary"
         :class="{
           'text-primary font-bold  ': route.path === '/columns',
           'text-textLight dark:text-textDark': route.path !== '/columns',

@@ -16,7 +16,7 @@ import TheNavbar from "./components/layout/TheNavbar.vue";
 
       <!-- Main Content -->
       <main
-        class="flex-grow p-6 bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark"
+        class="flex-grow p-3 md:p-6 bg-backgroundLight dark:bg-backgroundDark text-textLight dark:text-textDark"
       >
         <RouterView />
       </main>

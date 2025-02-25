@@ -1,25 +1,25 @@
 <script setup>
 import TaskItem from "./TaskItem.vue";
 
-const columnTasks = [
-  { id: 1, title: "Task 1", completed: false },
-  { id: 2, title: "Task 2", completed: true },
-];
+defineProps({
+  title: String,
+  tasks: Array,
+});
 
-const removeTask = (id) => {
-  console.log("Removing task with ID:", id);
-};
+defineEmits(["remove-task", "update-task", "toggle-task"]);
 </script>
 
 <template>
   <div>
-    <h2 class="text-xl font-bold">Tasks in Columns</h2>
-    <ul class="mt-6 space-y-3">
+    <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
+    <ul class="space-y-3 bg-white dark:bg-sidebarDark p-4 rounded-lg shadow-md">
       <TaskItem
-        v-for="task in columnTasks"
+        v-for="task in tasks"
         :key="task.id"
         :task="task"
-        @remove-task="removeTask"
+        @remove-task="$emit('remove-task', task.id)"
+        @update-task="$emit('update-task', task)"
+        @toggle-task="$emit('toggle-task', task.id)"
       />
     </ul>
   </div>

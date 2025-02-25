@@ -62,7 +62,7 @@ export const useTaskStore = defineStore("taskStore", () => {
     ]
   );
 
-  // Automatically update local storage when tasks change
+  // update local storage when tasks change
   watch(
     tasks,
     () => {
@@ -83,7 +83,11 @@ export const useTaskStore = defineStore("taskStore", () => {
     const task = tasks.value.find((task) => task.id === taskId);
     if (task) {
       task.completed = !task.completed;
-      task.list = task.completed ? "Done" : "To-do";
+      if (task.completed) {
+        task.list = "Done";
+      } else {
+        task.list = "To-do";
+      }
     }
   };
 
